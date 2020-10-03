@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	line-height: 1.6;
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1100px 1fr;
+	align-items: center;
+	overflow: hidden;
+	background-color: #e4e3e3;
+	color: #111;
+}
+
+.register {
+	height: 800px;
+	grid-column: 2 / 3;
+	display: grid;
+	grid-template-columns: 1fr 500px;
+	background-color: #fff;
+	border-radius: 1rem;
+	box-shadow: 1rem 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.register-content__left {
+	grid-column: 1 / 2;
+	border-radius: 1rem 0 0 1rem;
+	background-image: linear-gradient(to bottom left, rgba(132, 169, 172, 0.7), rgba(32, 64, 81, 0.8)),
+		url("/images/background-image.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.register-content__right {
+	grid-column: 2 / 3;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.register-content__right .heading {
+	margin-bottom: 2rem;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+	font-weight: 800;
+	background: linear-gradient(to bottom left, rgba(132, 169, 172, 0.7), rgba(32, 64, 81, 0.8));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.register-content__right .form-control {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.register-content__right .form-control .label {
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+	letter-spacing: 0.1rem;
+	color: #3b6978;
+}
+
+.register-content__right .form-control .input {
+	padding: 0.8rem;
+	border: 0.2rem solid #ccc;
+	border-radius: 0.5rem;
+	font-size: 1.2rem;
+	font-family: inherit;
+}
+
+.register-content__right .form-control .input:focus {
+	outline: none;
+	border-color: #84a9ac;
+}
+
+.register-content__right .form-control .input::placeholder {
+	font-size: 1rem;
+	color: #84a9ac;
+}
+
+.register-content__right .form-control .fas {
+	position: absolute;
+	top: 50%;
+	right: 1rem;
+	transform: translate(0, -50%);
+	font-size: 1.5rem;
+	visibility: hidden;
+}
+
+.register-content__right .form-control small {
+	margin: 0.5rem 0;
+	font-weight: 600;
+	color: #d8000c;
+	visibility: hidden;
+}
+
+.register-content__right .submitBtn {
+	width: 100%;
+	padding: 1rem 0;
+	outline: none;
+	border: none;
+	border-radius: 0.5rem;
+	color: #fff;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+	cursor: pointer;
+	background-image: linear-gradient(to left, rgba(32, 64, 81, 0.8), rgba(132, 169, 172, 0.5), rgba(32, 64, 81, 0.8));
+	background-size: 200%;
+	background-position: left;
+	transition: 0.3s ease;
+}
+
+.register-content__right .submitBtn:hover {
+	background-position: right;
+}
+
+.register-content__right .form-control.succes .input {
+	border-color: #4f8a10;
+}
+
+.register-content__right .form-control.succes i.fa-check-circle {
+	color: #4f8a10;
+	visibility: visible;
+}
+
+.register-content__right .form-control.error .input {
+	border-color: #d8000c;
+}
+
+.register-content__right .form-control.error i.fa-exclamation-circle {
+	color: #d8000c;
+	visibility: visible;
+}
+
+.register-content__right .form-control.error small {
+	visibility: visible;
+}
+
+@media screen and (max-width: 1200px) {
+	body {
+		grid-template-columns: 1fr 900px 1fr;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	body {
+		grid-template-columns: 1fr 750px 1fr;
+	}
+	.register {
+		grid-template-columns: 1fr 400px;
+	}
+	.register-content__right .heading {
+		font-size: 1.6rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		font-size: 62.5%;
+		grid-template-columns: 1fr 700px 1fr;
+	}
+	.register {
+		grid-template-columns: 1fr 375px;
+	}
+	.register-content__right .heading {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	body {
+		font-size: 62.5%;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.register {
+		grid-column: 1 / -1;
+		display: block;
+		border-radius: 0;
+	}
+	.register-content__left {
+		display: none;
+	}
+	.register-content__right {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.register {
+		height: 100%;
+		width: 100%;
+	}
+	.register-content__right {
+		padding: 2rem 1.5rem;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	body {
+		font-size: 40%;
+		overflow: visible;
+		min-height: 100%;
+	}
+	body .register {
+		height: 100%;
+	}
+}
