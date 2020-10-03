@@ -33,7 +33,7 @@ body {
 	grid-column: 1 / 2;
 	border-radius: 1rem 0 0 1rem;
 	background-image: linear-gradient(to bottom left, rgba(132, 169, 172, 0.7), rgba(32, 64, 81, 0.8)),
-		url("/images/background-image.jpg");
+		url("images/background-image.jpg");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
